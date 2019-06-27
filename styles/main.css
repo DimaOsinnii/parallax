@@ -1,0 +1,27 @@
+.parallax-image-hero {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+}
+.parallax-image-hero .layer {
+  position: absolute;
+  left: -10%;
+  top: 0;
+  width: 110%;
+  height: 100%;
+}
+.parallax-image-hero .layer-bg {
+  background: url(../img/layer-1.png) center no-repeat;
+  background-size: cover;
+}
+.parallax-image-hero .layer-1 {
+  background: url(../img/layer-2.png) center no-repeat;
+  background-size: cover;
+}
+.parallax-image-hero .layer-2 {
+  background: url(../img/layer-3.png) center no-repeat;
+  background-size: cover;
+}
