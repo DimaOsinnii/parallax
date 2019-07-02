@@ -1,17 +1,17 @@
 .parallax-image-hero {
-  position: fixed;
+  position: relative;
   left: 0;
   top: 0;
   right: 0;
   bottom: 0;
   height: 100vh;
+  overflow: hidden;
 }
 .parallax-image-hero .layer {
   position: absolute;
-  left: -10%;
   top: 0;
   width: 110%;
-  height: 100%;
+  height: 110%;
 }
 .parallax-image-hero .layer-bg {
   background: url(../img/layer-1.png) center no-repeat;
@@ -24,4 +24,9 @@
 .parallax-image-hero .layer-2 {
   background: url(../img/layer-3.png) center no-repeat;
   background-size: cover;
+}
+main {
+  height: 2000px;
+  width: 100%;
+  background-color: red;
 }
