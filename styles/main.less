@@ -1,33 +1,69 @@
 
-.parallax-image-hero {
-  position: relative;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  height: 100vh;
-  overflow: hidden;
-  .layer {
-    position: absolute;
+header {
+  font-size: 12px;
+  .header-top {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 1;
+    width: 100vw;
+    height: 10vh;
+    background-color: white;
+  }
+  .parallax-image-hero {
+    position: relative;
+    left: 0;
     top: 0;
-    width: 110%;
-    height: 110%;
-  }
-  .layer-bg {
-    background: url(../img/layer-1.png) center no-repeat;
-    background-size: cover;
-  }
-  .layer-1 {
-    background: url(../img/layer-2.png) center no-repeat;
-    background-size: cover;
-  }
-  .layer-2 {
-    background: url(../img/layer-3.png) center no-repeat;
-    background-size: cover;
+    right: 0;
+    bottom: 0;
+    height: 100vh;
+    overflow: hidden;
+    .layer {
+      position: absolute;
+      top: 0;
+      width: 110%;
+      height: 140%;
+    }
+    .layer-bg {
+      background: url(../img/layer-1.png) center no-repeat;
+      background-size: cover;
+
+    }
+    .layer-1 {
+      background: url(../img/2.png) center no-repeat;
+      background-size: cover;
+    }
+    .layer-2 {
+      background: url(../img/3.png) center no-repeat;
+      background-size: cover;
+    }
   }
 }
 main {
-  height: 2000px;
-  width: 100%;
-  background-color: red;
+  section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    width: 100%;
+    height: 100vh;
+    h2 {
+      color: white;
+    }
+    &:first-child {
+      background: url("../img/whit rocks.jpg") center;
+      background-size: cover;
+    }
+    &:nth-child(2){
+      background: black;
+    }
+    &:nth-child(3) {
+      background: url("../img/needles.jpg");
+      background-size: cover;
+    }
+    &:last-child{
+      background: blue;
+    }
+  }
 }
