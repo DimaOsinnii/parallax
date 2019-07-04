@@ -1,15 +1,57 @@
-
+body{
+overflow: hidden;
+}
 header {
-  font-size: 12px;
+  z-index: 2;
+  position: relative;
+  width: 100vw;
   .header-top {
     position: fixed;
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    z-index: 1;
-    width: 100vw;
+    justify-content: space-between;
+    z-index: 2;
+    width: 100%;
     height: 10vh;
-    background-color: white;
+    background-color: transparent;
+    color: white;
+    .logo {
+      margin-left: 10%;
+    }
+    .entrance {
+      margin-right: 10%;
+    }
+  }
+  .header-middle {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    .btn {
+      border-radius: 20px;
+      border-color: transparent;
+      background-color: white;
+      cursor: pointer;
+      width: 300px;
+      height: 100px;
+      padding: 0;
+      margin: 0;
+    }
+  }
+  .header-side {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 2;
+    right: 2%;
+    bottom: 2%;
+    height: 10vh;
+    background-color: transparent;
+    color: white;
   }
   .parallax-image-hero {
     position: relative;
@@ -40,7 +82,25 @@ header {
     }
   }
 }
+.side-nav{
+  position: fixed;
+  width: 2px;
+  height: 500px;
+  background-color: white;
+  top: 25%;
+  margin-left: 50px;
+  z-index: 1;
+  ul {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    list-style: none;
+    color: white;
+  }
+}
 main {
+  position: relative;
   section {
     display: flex;
     align-items: center;
@@ -52,18 +112,21 @@ main {
       color: white;
     }
     &:first-child {
-      background: url("../img/whit rocks.jpg") center;
+      background: url("../img/r.jpg");
       background-size: cover;
+      background-position-y: center;
     }
     &:nth-child(2){
       background: black;
     }
     &:nth-child(3) {
-      background: url("../img/needles.jpg");
+      background: url("../img/r.jpg");
       background-size: cover;
+      background-position-y: center;
     }
     &:last-child{
-      background: blue;
+      background: black;
+      background-size: cover;
     }
   }
 }

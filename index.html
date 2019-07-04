@@ -8,11 +8,16 @@
     <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
-    <header>
+    <header class="screen">
         <section class="header-top">
             <div class="logo">Parallax</div>
-            <div class="social">Instagram</div>
             <div class="entrance">Log in</div>
+        </section>
+        <section class="header-middle">
+            <button  class="btn">Start now</button>
+        </section>
+        <section class="header-side">
+                <div class="social"><img src="img/instagram.svg" width="60" height="60" alt=""></div>
         </section>
         <div class="parallax-image-hero">
             <div data-val = "10" class="layer layer-bg"></div>
@@ -20,18 +25,22 @@
             <div data-val="80" class="layer layer-2"></div>
         </div>
     </header>
+    <nav class="side-nav">
+        <ul>
+            <li>Section-1</li>
+            <li>Section-2</li>
+            <li>Section-3</li>
+            <li>Section-4</li>
+        </ul>
+    </nav>
     <main>
-        <section id="parallax-1">
-            <h2>Section-1</h2>
-        </section>
-        <section><h2>Section-2</h2></section>
-        <section id="parallax-2"><h2>Section-3</h2></section>
-        <section><h2>Section-4</h2></section>
-    </main>
-    <footer>
-        <div class="social"></div>
-        <div class="copyrighting"></div>
-    </footer>
+            <section class="screen" id="parallax-1">
+                <h2>Section-1</h2>
+            </section>
+            <section class="screen"><h2>Section-2</h2></section>
+            <section class="screen" id="parallax-2"><h2>Section-3</h2></section>
+            <section class="screen"><h2>Section-4</h2></section>
+        </main>
     <script src="https://ajax.googleapis.com/ajax/libs/d3js/5.9.0/d3.min.js"></script>
     <script src="main.js"></script>
 </body>
