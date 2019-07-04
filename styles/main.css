@@ -14,7 +14,6 @@ header .header-top {
   z-index: 2;
   width: 100%;
   height: 10vh;
-  background-color: transparent;
   color: white;
 }
 header .header-top .logo {
@@ -26,21 +25,50 @@ header .header-top .entrance {
 header .header-middle {
   position: absolute;
   width: 100%;
-  top: 50%;
+  top: 10vh;
+  height: 90vh;
   z-index: 1;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
 }
 header .header-middle .btn {
+  font-size: 50px;
   border-radius: 20px;
+  outline: none;
   border-color: transparent;
-  background-color: white;
-  cursor: pointer;
-  width: 300px;
-  height: 100px;
   padding: 0;
   margin: 0;
+  display: flex;
+  justify-content: space-between;
+}
+header .header-middle .btn .btn-child {
+  height: 100px;
+  width: 50px;
+  transition: 0.5s;
+  background-color: #f9f9f9;
+  cursor: pointer;
+}
+header .header-middle .btn .btn-child:first-child {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+header .header-middle .btn .btn-child:last-child {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+header .header-middle .btn:hover .btn-child {
+  margin: 10px;
+  height: 300px;
+  width: 100px;
+  transition: 0.3s;
+  transition-delay: 0.5s;
+  border-radius: unset;
+}
+header .header-middle .btn:hover .btn-child:hover {
+  width: 200px;
+  background-color: crimson;
 }
 header .header-side {
   position: fixed;
@@ -50,9 +78,13 @@ header .header-side {
   z-index: 2;
   right: 2%;
   bottom: 2%;
-  height: 10vh;
   background-color: transparent;
   color: white;
+}
+header .header-side .social img {
+  width: 40px;
+  height: 40px;
+  margin: 5px;
 }
 header .parallax-image-hero {
   position: relative;
@@ -83,20 +115,55 @@ header .parallax-image-hero .layer-2 {
 }
 .side-nav {
   position: fixed;
-  width: 2px;
   height: 500px;
-  background-color: white;
   top: 25%;
   margin-left: 50px;
   z-index: 1;
 }
 .side-nav ul {
+  padding: 0;
   display: flex;
   flex-direction: column;
   height: 100%;
-  justify-content: space-between;
+  justify-content: space-around;
   list-style: none;
-  color: white;
+  width: 100%;
+  border-left: 1px solid #fff;
+}
+.side-nav ul li {
+  font-size: 12px;
+  align-self: flex-start;
+  color: #fff;
+  padding-left: 30px;
+  position: relative;
+}
+.side-nav ul li:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  font-size: 40px;
+  width: 10px;
+  display: block;
+  top: 50%;
+  background: white;
+  z-index: 23;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  height: 10px;
+}
+.side-nav ul .paintToBlack:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  font-size: 40px;
+  width: 15px;
+  display: block;
+  top: 50%;
+  background: red;
+  z-index: 23;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  height: 15px;
 }
 main {
   position: relative;
