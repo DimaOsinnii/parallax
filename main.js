@@ -1,6 +1,7 @@
 const parallaxFirst = document.getElementById("parallax-1");
 const parallaxSecond = document.getElementById("parallax-2");
 const progressDots = document.querySelectorAll(".side-nav ul li");
+const navLineUl = document.querySelector(".side-nav ul");
 const header = document.querySelector('header');
 const offSetInitial = window.pageYOffset;
 const btnChildAll = document.querySelectorAll('.btn-child');
@@ -17,6 +18,10 @@ const height = window.innerHeight
     || document.documentElement.clientHeight
     || document.body.clientHeight;
 
+let initialPointer = offSetInitial / height;
+
+paintBeforeElement(height, offSetInitial, initialPointer, navLineUl);
+
 // async function fetchData(index) {
 //     try {
 //         await fetch(api[index])
@@ -32,7 +37,6 @@ const height = window.innerHeight
 //     }
 // }
 
-
 btnChildAll.forEach((single, index) => {
     single.addEventListener('click', () => {
         scrollToHeight(height, index);
@@ -41,11 +45,6 @@ btnChildAll.forEach((single, index) => {
     //     fetchData(index);
     // });
 });
-
-
-let initialPointer = offSetInitial / height;
-paintBeforeElement(height, offSetInitial, initialPointer);
-
 
 function parallax(event) {
     let layers = this.querySelectorAll('.layer');
@@ -63,28 +62,29 @@ function parallax(event) {
     });
 
 }
-
 header.addEventListener("mousemove", parallax);
-
-
 function parallaxBg() {
     let offset = window.pageYOffset;
     let pointer = offset / height;
+    // console.log(pointer);
     parallaxFirst.style.backgroundPositionY = (offset - header.clientHeight) * 0.9 + "px";
     parallaxSecond.style.backgroundPositionY = (offset - header.clientHeight * 3) * 0.9 + "px";
-    paintBeforeElement(height, offset, pointer);
+    paintBeforeElement(height, offset, pointer, navLineUl);
 }
-
-function paintBeforeElement(height, offset, pointer) {
+function paintBeforeElement(height, offset, pointer, ul) {
     progressDots.forEach((dotEl, index) => {
-        if (index === pointer - 1) {
-            dotEl.classList.add('paintToBlack', ':before');
-        } else {
-            dotEl.classList.remove('paintToBlack')
+        if (pointer === 2) {
+            dotEl.classList.add('paintToBlack');
+            ul.style.borderColor="black";
         }
+        else {
+            dotEl.classList.remove('paintToBlack');
+            ul.style.borderColor="white"
+        }
+        if (index === pointer - 1) dotEl.classList.add('paintToRed', ':before');
+        else {dotEl.classList.remove('paintToRed');}
     });
 }
-
 
 function scrollToHeight(height, index) {
     window.scrollTo({
@@ -93,12 +93,11 @@ function scrollToHeight(height, index) {
     });
 }
 
-
 // button.addEventListener("click", () => scrollToHeight(height) );
 
 function debounce(func, wait, immediate) {
     let timeout;
-    setInterval(() => timeout = null, 2500);
+    setInterval(() => timeout = null, wait);
     return function () {
         let context = this, args = arguments;
         let later = function () {
@@ -126,7 +125,7 @@ let scroll = debounce(function (e) {
             behavior: "smooth"
         });
     }
-}, 450, true);
+}, 1250, true);
 
 
 window.addEventListener("scroll", parallaxBg);

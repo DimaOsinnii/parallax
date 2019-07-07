@@ -6,6 +6,7 @@
     <title>Layout</title>
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Dosis|Open+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
 <header class="screen">
@@ -40,16 +41,44 @@
         <li><span>Section-1</span></li>
         <li><span>Section-2</span></li>
         <li><span>Section-3</span></li>
-        <li> <span>Section-4</span></li>
+        <li><span>Section-4</span></li>
     </ul>
 </nav>
 <main>
     <section class="screen" id="parallax-1">
-        <h2>Section-1</h2>
+            <div class="wrapper">
+                <div class="miniSheet">
+                    <p>This causes two practical issues. First, understanding such a system is hard. If everything can
+                        touch everything else, it is difficult to look at any given piece in isolation. You are forced
+                        to build up a holistic understanding of the entire thing. Second, if you want to use any of the
+                        functionality from such a program in another situation, rewriting it may be easier than trying
+                        to disentangle it from its context.
+                    </p>
+                    <button>Next</button>
+                </div>
+                <div class="miniSheet">
+                    <p>This causes two practical issues. First, understanding such a system is hard. If everything can
+                        touch everything else, it is difficult to look at any given piece in isolation. You are forced
+                        to build up a holistic understanding of the entire thing. Second, if you want to use any of the
+                        functionality from such a program in another situation, rewriting it may be easier than trying
+                        to disentangle it from its context.
+                    </p>
+                    <button>Next</button>
+                </div>
+            </div>
     </section>
-    <section class="screen"><h2>Section-2</h2></section>
-    <section class="screen" id="parallax-2"><h2>Section-3</h2></section>
-    <section class="screen"><h2>Section-4</h2></section>
+    <section class="screen">
+        <div class="wrapper">
+            <div class="sheet"></div>
+        </div>
+    </section>
+    <section class="screen" id="parallax-2">
+        <div class="wrapper"></div>
+    </section>
+    <section class="screen">
+        <div class="wrapper">
+        </div>
+    </section>
 </main>
 <script src="main.js"></script>
 </body>

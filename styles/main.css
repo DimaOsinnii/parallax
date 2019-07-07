@@ -1,10 +1,17 @@
 body {
   overflow: hidden;
+  font-family: 'Open Sans', sans-serif;
+}
+body h1,
+body h2,
+body h3 {
+  font-family: 'Dosis', sans-serif;
 }
 header {
   z-index: 2;
   position: relative;
   width: 100vw;
+  font-size: 25px;
 }
 header .header-top {
   position: fixed;
@@ -15,6 +22,7 @@ header .header-top {
   width: 100%;
   height: 10vh;
   color: white;
+  background: rgba(0, 0, 0, 0.25);
 }
 header .header-top .logo {
   margin-left: 10%;
@@ -151,7 +159,24 @@ header .parallax-image-hero .layer-2 {
   transform: translate(-50%, -50%);
   height: 10px;
 }
+.side-nav ul .paintToBlack {
+  color: black;
+}
 .side-nav ul .paintToBlack:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  font-size: 40px;
+  width: 15px;
+  display: block;
+  top: 50%;
+  background: black;
+  z-index: 23;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  height: 15px;
+}
+.side-nav ul .paintToRed:before {
   content: "";
   position: absolute;
   left: 0;
@@ -165,6 +190,9 @@ header .parallax-image-hero .layer-2 {
   transform: translate(-50%, -50%);
   height: 15px;
 }
+.side-nav ul .paintToBlackUl {
+  border-left-color: black;
+}
 main {
   position: relative;
 }
@@ -172,12 +200,8 @@ main section {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: bold;
   width: 100%;
   height: 100vh;
-}
-main section h2 {
-  color: white;
 }
 main section:first-child {
   background: url("../img/r.jpg");
@@ -185,7 +209,7 @@ main section:first-child {
   background-position-y: center;
 }
 main section:nth-child(2) {
-  background: black;
+  background: white;
 }
 main section:nth-child(3) {
   background: url("../img/r.jpg");
@@ -195,4 +219,28 @@ main section:nth-child(3) {
 main section:last-child {
   background: black;
   background-size: cover;
+}
+main section .wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: 100%;
+}
+main section .wrapper .sheet {
+  flex-basis: 100%;
+  background: white;
+}
+main section .wrapper .miniSheet {
+  width: 33%;
+  border-radius: 5px;
+  box-shadow: 10px 9px 44px -6px rgba(0, 0, 0, 0.58);
+  background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+  margin: 10% 0 10% 10%;
+  padding: 10px;
+}
+main section .wrapper .miniSheet:first-child {
+  align-self: flex-start;
+}
+main section .wrapper .miniSheet:last-child {
+  align-self: flex-end;
 }
