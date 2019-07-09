@@ -4,8 +4,8 @@ const progressDots = document.querySelectorAll(".side-nav ul li");
 const navLineUl = document.querySelector(".side-nav ul");
 const header = document.querySelector('header');
 const offSetInitial = window.pageYOffset;
+const instagram = document.getElementById('insta');
 const btnChildAll = document.querySelectorAll('.btn-child');
-
 // const api = [
 //     'https://jsonplaceholder.typicode.com/todos/',
 //     'https://jsonplaceholder.typicode.com/posts/',
@@ -19,6 +19,12 @@ const height = window.innerHeight
     || document.body.clientHeight;
 
 let initialPointer = offSetInitial / height;
+
+
+console.log(`initial height: ${height},
+initial offset ${offSetInitial},
+initial pointer ${initialPointer}`);
+
 
 paintBeforeElement(height, offSetInitial, initialPointer, navLineUl);
 
@@ -60,7 +66,6 @@ function parallax(event) {
         //     layer.style.transform = `translate(${event.clientX * (-1) * speed / 1000}px, ${event.clientY * (-1) * speed / 1000}px)`;
         // }
     });
-
 }
 header.addEventListener("mousemove", parallax);
 function parallaxBg() {
@@ -71,19 +76,27 @@ function parallaxBg() {
     parallaxSecond.style.backgroundPositionY = (offset - header.clientHeight * 3) * 0.9 + "px";
     paintBeforeElement(height, offset, pointer, navLineUl);
 }
+
+function between(x, min, max) {
+    return x >= min && x <= max;
+}
+
 function paintBeforeElement(height, offset, pointer, ul) {
     progressDots.forEach((dotEl, index) => {
         if (pointer === 2) {
             dotEl.classList.add('paintToBlack');
             ul.style.borderColor="black";
+            instagram.setAttribute("fill", "#000");
         }
         else {
             dotEl.classList.remove('paintToBlack');
-            ul.style.borderColor="white"
+            ul.style.borderColor="white";
+            instagram.setAttribute("fill", "#fff");
         }
-        if (index === pointer - 1) dotEl.classList.add('paintToRed', ':before');
+        if (pointer - 1 === index) dotEl.classList.add('paintToRed', ':before');
         else {dotEl.classList.remove('paintToRed');}
     });
+    // console.log(pointer);
 }
 
 function scrollToHeight(height, index) {
@@ -91,6 +104,7 @@ function scrollToHeight(height, index) {
         top: height * (index + 1),
         behavior: "smooth"
     });
+    paintBeforeElement(height, window.pageYOffset, index - 1, navLineUl);
 }
 
 // button.addEventListener("click", () => scrollToHeight(height) );
@@ -101,7 +115,6 @@ function debounce(func, wait, immediate) {
     return function () {
         let context = this, args = arguments;
         let later = function () {
-            timeout = null;
             if (!immediate) func.apply(context, args);
         };
         let callNow = immediate && !timeout;
@@ -125,14 +138,53 @@ let scroll = debounce(function (e) {
             behavior: "smooth"
         });
     }
-}, 1250, true);
+}, 1020, true);
 
 
 window.addEventListener("scroll", parallaxBg);
 window.addEventListener("wheel", scroll);
 
+//Video player
+let mediaPlayer;
+let btn = document.getElementById('play-pause-button');
+let btnCircle = document.querySelector('.button-circle');
+document.addEventListener("DOMContentLoaded", function() { initialiseMediaPlayer(); }, true);
+function initialiseMediaPlayer() {
+    mediaPlayer = document.getElementById('media-video');
+    mediaPlayer.controls = true;
+}
+function t() {
+    if(mediaPlayer.pause) {
+        mediaPlayer.play();
+        btn.style.opacity = '0';
+        btnCircle.style.opacity = '0';
+    }
+    else {
+        btn.style.opacity = '1';
+        btnCircle.style.opacity = '1';
+        mediaPlayer.pause();
+    }
+}
+function togglePlayPause() {
+    if (mediaPlayer.paused || mediaPlayer.ended) {
+        mediaPlayer.play();
+        btn.className = 'pause';
+        btn.style.opacity = '0';
+        btnCircle.style.opacity ='0';
+    }
+    else {
+        mediaPlayer.pause();
+        btn.className = 'play';
+        btn.style.opacity = '1';
+        btnCircle.style.opacity ='1';
+    }
+}
 
-
-
-
+window.addEventListener('resize', e => {
+    e.preventDefault();
+    let point = window.pageYOffset / window.innerHeight;
+    let windHeight = window.innerHeight;
+    let flooredPoint = Math.round(point) - 1;
+    scrollToHeight(windHeight, flooredPoint);
+});
 
