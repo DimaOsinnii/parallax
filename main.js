@@ -3,6 +3,7 @@ const parallaxSecond = document.getElementById("parallax-2");
 const progressDots = document.querySelectorAll(".side-nav ul li");
 const navLineUl = document.querySelector(".side-nav ul");
 const header = document.querySelector('header');
+const wordsInHeader = header.querySelector('.header-top');
 const offSetInitial = window.pageYOffset;
 const instagram = document.getElementById('insta');
 const btnChildAll = document.querySelectorAll('.btn-child');
@@ -87,11 +88,13 @@ function paintBeforeElement(height, offset, pointer, ul) {
             dotEl.classList.add('paintToBlack');
             ul.style.borderColor="black";
             instagram.setAttribute("fill", "#000");
+            wordsInHeader.style.color = "black";
         }
         else {
             dotEl.classList.remove('paintToBlack');
             ul.style.borderColor="white";
             instagram.setAttribute("fill", "#fff");
+            wordsInHeader.style.color = "white";
         }
         if (pointer - 1 === index) dotEl.classList.add('paintToRed', ':before');
         else {dotEl.classList.remove('paintToRed');}

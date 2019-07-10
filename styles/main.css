@@ -22,12 +22,12 @@ header .header-top {
   width: 100%;
   height: 10vh;
   color: white;
-  background: rgba(0, 0, 0, 0.25);
 }
 header .header-top .logo {
   margin-left: 10%;
 }
 header .header-top .entrance {
+  cursor: pointer;
   margin-right: 10%;
   font-size: 20px;
 }
@@ -276,6 +276,7 @@ main section .wrapper .sheet #media-player .video-container #play-pause-button {
   position: relative;
   outline: none;
   transition: opacity 1s ease;
+  cursor: pointer;
 }
 main section .wrapper .sheet #media-player .video-container .button-circle {
   position: absolute;
@@ -285,6 +286,7 @@ main section .wrapper .sheet #media-player .video-container .button-circle {
   border-radius: 50%;
   outline: none;
   transition: opacity 1s ease;
+  cursor: pointer;
 }
 main section .wrapper .miniSheet {
   width: 33%;
