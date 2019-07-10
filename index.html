@@ -6,42 +6,130 @@
     <title>Layout</title>
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Dosis|Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="slick/slick/slick.css"/>
 </head>
 <body>
-    <header class="screen">
-        <section class="header-top">
-            <div class="logo">Parallax</div>
-            <div class="entrance">Log in</div>
-        </section>
-        <section class="header-middle">
-            <button  class="btn">Start now</button>
-        </section>
-        <section class="header-side">
-                <div class="social"><img src="img/instagram.svg" width="60" height="60" alt=""></div>
-        </section>
-        <div class="parallax-image-hero">
-            <div data-val = "10" class="layer layer-bg"></div>
-            <div data-val="60" class="layer layer-1"></div>
-            <div data-val="80" class="layer layer-2"></div>
+<header class="screen">
+    <section class="header-top">
+        <div class="logo">Parallax</div>
+        <div class="entrance">Log in</div>
+    </section>
+    <section class="header-middle">
+        <div class="btn">
+            <div class="btn-child">
+                <ul></ul>
+            </div>
+            <div class="btn-child"></div>
+            <div class="btn-child"></div>
+            <div class="btn-child"></div>
         </div>
-    </header>
-    <nav class="side-nav">
-        <ul>
-            <li>Section-1</li>
-            <li>Section-2</li>
-            <li>Section-3</li>
-            <li>Section-4</li>
-        </ul>
-    </nav>
-    <main>
-            <section class="screen" id="parallax-1">
-                <h2>Section-1</h2>
-            </section>
-            <section class="screen"><h2>Section-2</h2></section>
-            <section class="screen" id="parallax-2"><h2>Section-3</h2></section>
-            <section class="screen"><h2>Section-4</h2></section>
-        </main>
-    <script src="https://ajax.googleapis.com/ajax/libs/d3js/5.9.0/d3.min.js"></script>
-    <script src="main.js"></script>
+    </section>
+    <section class="header-side">
+        <div class="social">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="insta" x="0px" y="0px" viewBox="0 0 48 48"  xml:space="preserve" width="50px" height="50px" class="lol"  fill="#FFFFFF"><g><g>
+	            <g>
+		            <path d="M40.4,5.5H35.6c-1.434,0-2.6,1.166-2.6,2.6V12.9c0,1.434,1.166,2.6,2.6,2.6H40.4c1.434,0,2.6-1.166,2.6-2.6V8.1    C43,6.666,41.834,5.5,40.4,5.5z M41,12.9c0,0.331-0.269,0.6-0.6,0.6H35.6c-0.331,0-0.6-0.269-0.6-0.6V8.1    c0-0.331,0.269-0.6,0.6-0.6H40.4c0.331,0,0.6,0.269,0.6,0.6V12.9z" data-original="#000000" class="active-path"/>
+                    <path d="M37.8,0.5H10.2C4.576,0.5,0,5.089,0,10.731V17.5v2v17.77C0,42.911,4.576,47.5,10.2,47.5h27.6    c5.624,0,10.2-4.589,10.2-10.23V19.5v-2v-6.769C48,5.089,43.424,0.5,37.8,0.5z M46,37.27c0,4.538-3.679,8.23-8.2,8.23H10.2    c-4.522,0-8.2-3.692-8.2-8.23V19.5h12.221C11.62,22.043,10,25.584,10,29.5c0,7.72,6.28,14,14,14s14-6.28,14-14    c0-3.916-1.62-7.457-4.221-10H46V37.27z M36,29.5c0,6.617-5.383,12-12,12s-12-5.383-12-12s5.383-12,12-12S36,22.883,36,29.5z     M31.174,17.5c-2.101-1.261-4.55-2-7.174-2s-5.073,0.739-7.174,2H2v-6.769C2,6.192,5.679,2.5,10.2,2.5h27.6    c4.521,0,8.2,3.692,8.2,8.231V17.5H31.174z" data-original="#000000" class="active-path"/>
+                    <path d="M15,29.5c0,4.962,4.037,9,9,9s9-4.038,9-9s-4.037-9-9-9S15,24.538,15,29.5z M31,29.5c0,3.86-3.141,7-7,7s-7-3.14-7-7    s3.141-7,7-7S31,25.64,31,29.5z" data-original="#000000" class="active-path" />
+	            </g>
+                </g></g>
+            </svg>
+        </div>
+    </section>
+    <div class="parallax-image-hero">
+        <div data-val="10" class="layer layer-bg"></div>
+        <div data-val="60" class="layer layer-1"></div>
+        <div data-val="80" class="layer layer-2"></div>
+    </div>
+</header>
+<nav class="side-nav">
+    <ul>
+        <li><span>Section-1</span></li>
+        <li><span>Section-2</span></li>
+        <li><span>Section-3</span></li>
+        <li><span>Section-4</span></li>
+    </ul>
+</nav>
+<main>
+    <section class="screen" id="parallax-1">
+            <div class="wrapper">
+                <div class="miniSheet">
+                    <p>This causes two practical issues. First, understanding such a system is hard. If everything can
+                        touch everything else, it is difficult to look at any given piece in isolation. You are forced
+                        to build up a holistic understanding of the entire thing. Second, if you want to use any of the
+                        functionality from such a program in another situation, rewriting it may be easier than trying
+                        to disentangle it from its context.
+                    </p>
+                    <button>Next</button>
+                </div>
+                <div class="miniSheet">
+                    <p>This causes two practical issues. First, understanding such a system is hard. If everything can
+                        touch everything else, it is difficult to look at any given piece in isolation. You are forced
+                        to build up a holistic understanding of the entire thing. Second, if you want to use any of the
+                        functionality from such a program in another situation, rewriting it may be easier than trying
+                        to disentangle it from its context.
+                    </p>
+                    <button>Next</button>
+                </div>
+            </div>
+    </section>
+    <section class="screen">
+        <div class="wrapper">
+            <div class="sheet">
+                <h2 class="video-title">Amazing views of the mountains</h2>
+                <p>A mountain is a large landform that rises above the surrounding land in a limited area, usually in
+                    the form of a peak. A mountain is generally steeper than a hill. Mountains are formed through
+                    tectonic forces or volcanism. These forces can locally raise the surface of the earth. Mountains
+                    erode slowly through the action of rivers, weather conditions, and glaciers. A few mountains are
+                    isolated summits, but most occur in huge mountain ranges.
+                </p>
+                <div id ="media-player">
+                    <video id='media-video' poster="img/r.jpg" controls="controls" onclick="t();">
+                        <source src="video/video.mp4" type='video/mp4'/>
+                    </video>
+                    <div class="video-container" onclick='togglePlayPause();'>
+                        <button id='play-pause-button' class='play'></button>
+                        <div class="button-circle"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="screen" id="parallax-2">
+        <div class="wrapper">
+           <!-- <figure class="slider">
+                <img src="img/first.jpg" id="first" alt="">
+                <img src="img/second.jpg" id="second" alt="">
+                <img src="img/third.jpg" id="third" alt="">
+                <img src="img/fourth.jpg" id="fourth" alt="">
+                <img src="img/fifth.jpg" id="fifth" alt="">
+            </figure>
+            <div class="arrows">
+                <div class="prev"></div>
+                <div class="next"></div>
+            </div>-->
+        </div>
+    </section>
+    <section class="screen">
+        <div class="wrapper">
+        </div>
+    </section>
+</main>
+<script src="main.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript" src="slick/slick/slick.min.js"></script>
+<!--<script>
+    let slider = $('.slider');
+    let arrowPrev = $('.prev');
+    let arrowNext = $('.next');
+    slider.slick({
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        prevArrow: arrowPrev,
+        nextArrow: arrowNext,
+    });
+
+</script>-->
 </body>
 </html>

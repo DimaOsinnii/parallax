@@ -1,10 +1,17 @@
 body {
   overflow: hidden;
+  font-family: 'Open Sans', sans-serif;
+}
+body h1,
+body h2,
+body h3 {
+  font-family: 'Dosis', sans-serif;
 }
 header {
   z-index: 2;
   position: relative;
   width: 100vw;
+  font-size: 25px;
 }
 header .header-top {
   position: fixed;
@@ -14,33 +21,63 @@ header .header-top {
   z-index: 2;
   width: 100%;
   height: 10vh;
-  background-color: transparent;
   color: white;
 }
 header .header-top .logo {
   margin-left: 10%;
 }
 header .header-top .entrance {
+  cursor: pointer;
   margin-right: 10%;
+  font-size: 20px;
 }
 header .header-middle {
   position: absolute;
   width: 100%;
-  top: 50%;
+  top: 10vh;
+  height: 90vh;
   z-index: 1;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
 }
 header .header-middle .btn {
+  font-size: 50px;
   border-radius: 20px;
+  outline: none;
   border-color: transparent;
-  background-color: white;
-  cursor: pointer;
-  width: 300px;
-  height: 100px;
   padding: 0;
   margin: 0;
+  display: flex;
+  justify-content: space-between;
+}
+header .header-middle .btn .btn-child {
+  height: 100px;
+  width: 50px;
+  transition: 0.5s;
+  background-color: #f9f9f9;
+  cursor: pointer;
+}
+header .header-middle .btn .btn-child:first-child {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+header .header-middle .btn .btn-child:last-child {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+header .header-middle .btn:hover .btn-child {
+  margin: 10px;
+  height: 300px;
+  width: 100px;
+  transition: 0.3s;
+  transition-delay: 0.5s;
+  border-radius: unset;
+}
+header .header-middle .btn:hover .btn-child:hover {
+  width: 200px;
+  background-color: crimson;
 }
 header .header-side {
   position: fixed;
@@ -50,9 +87,13 @@ header .header-side {
   z-index: 2;
   right: 2%;
   bottom: 2%;
-  height: 10vh;
   background-color: transparent;
   color: white;
+}
+header .header-side .social img {
+  width: 40px;
+  height: 40px;
+  margin: 5px;
 }
 header .parallax-image-hero {
   position: relative;
@@ -83,20 +124,75 @@ header .parallax-image-hero .layer-2 {
 }
 .side-nav {
   position: fixed;
-  width: 2px;
   height: 500px;
-  background-color: white;
   top: 25%;
   margin-left: 50px;
   z-index: 1;
 }
 .side-nav ul {
+  padding: 0;
   display: flex;
   flex-direction: column;
   height: 100%;
-  justify-content: space-between;
+  justify-content: space-around;
   list-style: none;
-  color: white;
+  width: 100%;
+  border-left: 1px solid #fff;
+}
+.side-nav ul li {
+  font-size: 12px;
+  align-self: flex-start;
+  color: #fff;
+  padding-left: 30px;
+  position: relative;
+}
+.side-nav ul li:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  font-size: 40px;
+  width: 10px;
+  display: block;
+  top: 50%;
+  background: white;
+  z-index: 23;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  height: 10px;
+}
+.side-nav ul .paintToBlack {
+  color: black;
+}
+.side-nav ul .paintToBlack:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  font-size: 40px;
+  width: 15px;
+  display: block;
+  top: 50%;
+  background: black;
+  z-index: 23;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  height: 15px;
+}
+.side-nav ul .paintToRed:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  font-size: 40px;
+  width: 15px;
+  display: block;
+  top: 50%;
+  background: red;
+  z-index: 23;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  height: 15px;
+}
+.side-nav ul .paintToBlackUl {
+  border-left-color: black;
 }
 main {
   position: relative;
@@ -105,12 +201,8 @@ main section {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: bold;
   width: 100%;
   height: 100vh;
-}
-main section h2 {
-  color: white;
 }
 main section:first-child {
   background: url("../img/r.jpg");
@@ -118,7 +210,7 @@ main section:first-child {
   background-position-y: center;
 }
 main section:nth-child(2) {
-  background: black;
+  background: white;
 }
 main section:nth-child(3) {
   background: url("../img/r.jpg");
@@ -128,4 +220,84 @@ main section:nth-child(3) {
 main section:last-child {
   background: black;
   background-size: cover;
+}
+main section .wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 80%;
+}
+main section .wrapper .sheet {
+  width: 100%;
+  height: 100%;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.4;
+}
+main section .wrapper .sheet .video-title {
+  margin: 0;
+  font-size: 40px;
+}
+main section .wrapper .sheet p {
+  width: 60%;
+}
+main section .wrapper .sheet #media-player {
+  position: relative;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+}
+main section .wrapper .sheet #media-player #media-video {
+  width: 80%;
+}
+main section .wrapper .sheet #media-player .video-container {
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 0;
+}
+main section .wrapper .sheet #media-player .video-container #play-pause-button {
+  transform: translateX(30px);
+  border-style: solid;
+  border-width: 37px 37px 37px 37px;
+  background-color: transparent;
+  border-color: transparent transparent transparent white;
+  position: relative;
+  outline: none;
+  transition: opacity 1s ease;
+  cursor: pointer;
+}
+main section .wrapper .sheet #media-player .video-container .button-circle {
+  position: absolute;
+  width: 115px;
+  height: 115px;
+  border: 2px solid white;
+  border-radius: 50%;
+  outline: none;
+  transition: opacity 1s ease;
+  cursor: pointer;
+}
+main section .wrapper .miniSheet {
+  width: 33%;
+  height: 63%;
+  box-shadow: 10px 9px 44px -6px rgba(0, 0, 0, 0.58);
+  background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+  padding: 10px;
+}
+main section .wrapper .miniSheet:first-child {
+  margin-right: 505px;
+}
+main section .wrapper .miniSheet:last-child {
+  margin-left: 505px;
 }
